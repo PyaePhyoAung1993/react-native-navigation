@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect}from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const AboutScreen = ({navigation}) => {
+  useEffect(() =>{
+    Alert.alert("Component Mounted");
+    return () => Alert.alert("Component will unmounted");
+  }, []);
+  
 	return (
 		<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
 			<Text style={{fontSize: hp(3)}}>About Screen</Text>
